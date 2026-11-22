@@ -9,10 +9,12 @@ import {
   ArrowUpRight,
   X,
   Compass,
+  Beaker,
 } from "lucide-react";
 import { isBusy } from "../shared/initial";
 import { WaterPanel, WaterConditions, water } from "../features/waters";
 import { BaitPanel, RigPanel } from "../features/tackle";
+import { WorkshopPanel } from "../features/workshop";
 import { LakeScene, FishingPanel } from "../features/fishing";
 import { CollectionPanel } from "../features/collection";
 import { ChallengePanel, TripStats } from "../features/challenges";
@@ -41,6 +43,10 @@ export function App() {
           <a className="nav-active" href="#fishing">
             <Compass size={16} />
             去钓鱼
+          </a>
+          <a href="#workshop">
+            <Beaker size={16} />
+            鱼饵工坊
           </a>
           <a href="#collection">
             <BookOpen size={16} />
@@ -121,6 +127,7 @@ export function App() {
               <BaitPanel doc={doc} busy={busy} send={send} />
               <RigPanel doc={doc} busy={busy} send={send} />
             </div>
+            <WorkshopPanel doc={doc} pinned={state.pinned} send={send} />
             <div className="journal-strip">
               <span>✳</span>
               <p>

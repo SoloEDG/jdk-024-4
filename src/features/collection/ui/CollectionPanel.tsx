@@ -3,6 +3,7 @@ import { BookOpen, Backpack, ArrowUpRight } from "lucide-react";
 import type { GameDocument } from "../../../shared/types";
 import type { Command } from "../../../shared/commands";
 import { fishCatalog, species } from "../../../shared/catalog";
+import { baitLabel } from "../../tackle/model/baits";
 import { bagWeight } from "../lib/records";
 import { FishIllustration } from "./FishIllustration";
 export function CollectionPanel({
@@ -90,6 +91,10 @@ export function CollectionPanel({
               <span>
                 <strong>{species(c.fish).name}</strong>
                 <small>{c.weight.toFixed(2)} kg</small>
+                <small className="bag-bait">
+                  {baitLabel(c.bait)}
+                  {c.baitBatch && <em> · 批次 {c.baitBatch}</em>}
+                </small>
               </span>
               <button
                 className="text-btn"

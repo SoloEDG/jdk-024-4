@@ -12,6 +12,7 @@ export function landCatch(
     weight: s.weight,
     spot: s.spot,
     bait: s.bait,
+    baitBatch: s.baitBatch,
     time: now,
     duration: s.duration,
     peakTension: s.peak,

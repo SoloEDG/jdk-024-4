@@ -1565,3 +1565,503 @@ main {
     animation: notice-out 1ms 5s forwards !important;
   }
 }
+
+/* ============ 鱼饵工坊 ============ */
+.workshop-panel {
+  margin-top: 20px;
+  border: 1px solid #dce6e2;
+  background: #f9fbf8;
+  border-radius: 7px;
+  overflow: hidden;
+}
+.ws-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 16px 18px;
+  background: none;
+  text-align: left;
+}
+.ws-toggle h2 {
+  font-size: 15px;
+  margin: 0;
+}
+.ws-toggle .ws-muted {
+  margin-left: auto;
+}
+.ws-chevron {
+  font-size: 11px;
+  color: var(--teal);
+}
+.ws-badge {
+  background: #e7f0ec;
+  color: var(--teal);
+  border-radius: 20px;
+  padding: 2px 9px;
+  font-size: 10px;
+}
+.ws-body {
+  padding: 0 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ws-intro {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+  background: #f1f5f1;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+.ws-card {
+  border: 1px solid #e3eaea;
+  background: #fff;
+  border-radius: 7px;
+  padding: 16px;
+}
+.ws-card .section-title h3 {
+  font-size: 14px;
+  margin: 0;
+}
+.ws-muted {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 400;
+}
+.ws-empty {
+  font-size: 11px;
+  color: var(--muted);
+  padding: 12px 4px;
+}
+/* 原料仓 */
+.ws-ingredients {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 12px 0;
+}
+.ws-ingredient {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f4f7f2;
+  border: 1px solid #e7ede8;
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+.ws-ingredient.soon {
+  border-color: #e0c3a3;
+  background: #faf3ea;
+}
+.ws-ing-icon {
+  font-size: 18px;
+}
+.ws-ing-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.ws-ing-main strong {
+  font-size: 12px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.ws-source {
+  font-size: 9px;
+  color: var(--teal);
+  background: #e7f0ec;
+  border-radius: 10px;
+  padding: 1px 6px;
+}
+.ws-ing-main small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.ws-qty {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.ws-gather {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  border-top: 1px dashed #e3eaea;
+  padding-top: 12px;
+}
+.ws-gather > span {
+  font-size: 10px;
+  color: var(--muted);
+  width: 100%;
+}
+.ws-gather-btn {
+  font-size: 10px;
+  background: #f1f5f1;
+  border: 1px solid #dde6de;
+  border-radius: 20px;
+  padding: 4px 10px;
+  color: var(--ink);
+}
+.ws-gather-btn:hover {
+  background: #e7f0ec;
+  border-color: var(--teal);
+}
+/* 配方与订单 */
+.ws-recipes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+.ws-recipe {
+  border: 1px solid #e3eaea;
+  border-radius: 6px;
+  padding: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #fcfdfb;
+}
+.ws-recipe.locked {
+  opacity: 0.62;
+  background: #f6f8f6;
+}
+.ws-recipe-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ws-recipe-head strong {
+  font-size: 13px;
+}
+.ws-lock {
+  font-size: 9px;
+  color: #ab8552;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.ws-recipe-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.ws-recipe-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ws-group {
+  font-size: 10px;
+  color: #5d7a72;
+}
+.ws-add-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+.ws-add-row input {
+  width: 46px;
+  border: 1px solid #d7e0da;
+  border-radius: 5px;
+  padding: 5px;
+  font: inherit;
+  font-size: 11px;
+}
+.ws-btn {
+  font-size: 11px;
+  background: #f1f5f1;
+  border: 1px solid #dde6de;
+  border-radius: 5px;
+  padding: 6px 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.ws-btn.primary {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+}
+.ws-btn:disabled {
+  opacity: 0.45;
+}
+.ws-plan-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px 0 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ws-plan-head h4 {
+  margin: 0;
+  font-size: 13px;
+}
+.ws-plan-actions {
+  display: flex;
+  gap: 7px;
+}
+.ws-ok {
+  font-size: 11px;
+  color: #3f7a55;
+  background: #ebf5ee;
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+.ws-warn {
+  font-size: 11px;
+  color: #9a6a3c;
+  background: #faf1e4;
+  border-radius: 5px;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.ws-orders {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 10px;
+}
+.ws-order {
+  border: 1px solid #e3eaea;
+  border-left-width: 3px;
+  border-radius: 6px;
+  padding: 11px;
+  background: #fcfdfb;
+}
+.ws-order.ok {
+  border-left-color: #5b9271;
+}
+.ws-order.bad {
+  border-left-color: #c98a5f;
+}
+.ws-order-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 7px;
+}
+.ws-order-head strong {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ws-order-head > div {
+  display: flex;
+  gap: 5px;
+}
+.ws-icon-btn {
+  font-size: 10px;
+  background: #f1f5f1;
+  border: 1px solid #dde6de;
+  border-radius: 5px;
+  padding: 4px 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+.ws-icon-btn.danger {
+  color: #b0644a;
+}
+.ws-icon-btn:disabled {
+  opacity: 0.4;
+}
+.ws-alloc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.ws-alloc-chip {
+  font-size: 10px;
+  background: #eef4ef;
+  border: 1px solid #dde6de;
+  border-radius: 12px;
+  padding: 3px 9px;
+  color: #46645c;
+}
+.ws-alloc-chip.empty {
+  opacity: 0.5;
+}
+.ws-order-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 7px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.ws-gaps {
+  margin: 4px 0 0;
+  padding-left: 16px;
+  color: #9a6a3c;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.ws-leftovers {
+  margin-top: 14px;
+  border-top: 1px dashed #e3eaea;
+  padding-top: 10px;
+}
+.ws-leftovers h4 {
+  margin: 0 0 8px;
+  font-size: 12px;
+}
+/* 操作台 */
+.ws-running {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+.ws-run {
+  border: 1px solid #e3eaea;
+  border-radius: 6px;
+  padding: 12px;
+  background: #fcfdfb;
+}
+.ws-run.done {
+  background: #f3f8f4;
+}
+.ws-run.cancelled {
+  opacity: 0.6;
+}
+.ws-status {
+  font-size: 9px;
+  border-radius: 10px;
+  padding: 1px 7px;
+  margin-left: 4px;
+}
+.ws-status.running {
+  background: #e7f0ec;
+  color: var(--teal);
+}
+.ws-status.done {
+  background: #ebf5ee;
+  color: #3f7a55;
+}
+.ws-status.cancelled {
+  background: #f0ece8;
+  color: #9a7a6a;
+}
+.ws-stage {
+  margin-top: 10px;
+  border-top: 1px dashed #eef1ee;
+  padding-top: 9px;
+}
+.ws-stage-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+.ws-feed-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.ws-feed-btn {
+  font-size: 10px;
+  background: #f4f7f2;
+  border: 1px solid #dde6de;
+  border-radius: 6px;
+  padding: 6px 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+}
+.ws-feed-btn small {
+  color: var(--muted);
+}
+.ws-feed-btn:disabled {
+  opacity: 0.4;
+}
+/* 成品 / 研究 / 追溯 */
+.ws-products,
+.ws-research,
+.ws-log {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+.ws-product,
+.ws-research-item,
+.ws-log-item {
+  border: 1px solid #e3eaea;
+  border-radius: 6px;
+  padding: 10px 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.ws-product.expired {
+  opacity: 0.5;
+}
+.ws-product > div,
+.ws-research-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.ws-product small,
+.ws-research-item small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.ws-batch-id {
+  font-size: 9px;
+  color: #9db0aa;
+  font-family: monospace;
+}
+.ws-research-item.on {
+  background: #f3f8f4;
+  border-color: #cfe0d4;
+}
+.ws-log-item {
+  flex-direction: column;
+  align-items: stretch;
+}
+.ws-log-head {
+  display: flex;
+  justify-content: space-between;
+}
+.bait-fresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #ab8552;
+  font-style: normal;
+  margin-left: 6px;
+}
+.bait-effect {
+  font-size: 10px;
+  color: var(--teal);
+  margin-top: 6px;
+}
+@media (max-width: 720px) {
+  .ws-ingredients,
+  .ws-recipes {
+    grid-template-columns: 1fr;
+  }
+}
+.bag-bait {
+  color: var(--teal);
+  font-size: 9px;
+}
+.bag-bait em {
+  font-style: normal;
+  color: #9db0aa;
+  font-family: monospace;
+}

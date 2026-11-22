@@ -2,6 +2,7 @@ import { Fish, MousePointer2, RotateCcw, Anchor } from "lucide-react";
 import type { Command } from "../../../shared/commands";
 import type { GameDocument, Session } from "../../../shared/types";
 import { species } from "../../../shared/catalog";
+import { availableStock } from "../../tackle/model/loadout";
 export function FishingPanel({
   doc,
   session: s,
@@ -56,7 +57,7 @@ export function FishingPanel({
         {s.phase === "ready" && (
           <button
             className="primary"
-            disabled={!doc.stock[doc.bait]}
+            disabled={availableStock(doc)[doc.bait] < 1}
             onClick={() => send({ type: "charge-start" })}
           >
             <Anchor size={17} />
